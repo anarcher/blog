@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ .Title }} | anarcher's trashcan </title>
+    {{if .Description}}
+    <meta name="description" content="{{.Description}}">
+    {{end}}
+    {{if .Author}}
+    <meta name="author" content="{{.Author}}">
+    {{end}}
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="/index.html">anarcher's trashcan </a>
+        </div>
+        <div class="navigation">
+            <ul>
+                <li><a href="/">blog</a></li>
+                <li><a href="/archives.html">archive</a></li>
+                <li><a href="/tags.html">tags</a></li>
+                <li><a href="/about.html">about</a></li>
+            </ul>
+        </div>
+        <div class="body">
+        {{.Content}}
+        </div>
+    </div>
+</body>
+</html>

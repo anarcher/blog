@@ -1,0 +1,20 @@
+{{range .Entries}}
+    {{if .Title}}
+    <h1 class="title"><a href="{{.Url}}">{{.Title}}</a></h1>
+    {{end}}
+    <p class="date">
+        {{.CDate}}{{if .UDate}} (Updated: {{.UDate}}){{end}}
+    </p>
+
+    {{.Content}}
+
+    {{if .Tags}}
+    <p class="tags">
+      {{range .Tags}}
+        <a href="tags.html#{{.}}">{{.}}</a>
+      {{end}}
+    </p>
+    {{end}}
+<hr/>
+{{end}}
+<p><a href="archives.html">More...</a></p>
