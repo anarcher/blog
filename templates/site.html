@@ -11,6 +11,8 @@
     {{end}}
     <link rel="stylesheet" href="/style.css" type="text/css">
     <link rel="shortcut icon" href="favicon.ico" />
+    <!-- These are the style sheets for syntax highlighting. -->
+    <link type="text/css" rel="stylesheet" href="rainbow/css/github.css"/>
 </head>
 <body>
     <div class="container">
@@ -29,18 +31,30 @@
         {{.Content}}
         </div>
     </div>
-<script type="text/javascript">
+    <div class="footer">
+        <p>&copy; Copyright 2013 by anarcher.</p>
+        <p>
+           Content licensed under the Creative Commons
+           attribution-noncommercial-sharealike License.</p>
+    </div>
+    <!-- These are the scripts for syntax highlighting. -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/rainbow/1.1.8/js/rainbow.min.js"></script>
+    <script src="rainbow/js/language/generic.js"></script>
+    {{range .Languages}}
+    <script src="rainbow/js/language/{{.}}.js"></script>
+    {{end}}
+    <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-38571523-1']);
-  _gaq.push(['_trackPageview']);
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38571523-1']);
+      _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
 
-</script>
+    </script>
 </body>
 </html>
