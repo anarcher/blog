@@ -1,0 +1,3 @@
+[submodule "public"]
+	path = public
+	url = git@bitbucket.org:anarcher/anarcher.bitbucket.org.git
