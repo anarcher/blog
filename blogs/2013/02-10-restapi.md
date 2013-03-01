@@ -3,31 +3,41 @@
 <!-- Created: 2013-02-10 -->
 <!-- Updated: 2013-02-10 -->
 
-HTTP 위에 JSON 기반으로 API을 만드는 일이 근래 많아졌다. 
-REST API가 최근에 이야기되는 개념도 아니지만, API을 만들때 생각외로 고민해야 할 부분들이 적지 않다. 
+REST API을 만드는 일이 많아졌다. 
+REST API가 이미 널리 알려진 개념이지만,RESTful하다고 할수 있는 API은 어느정도는 주관적인 요소가 개입되는 것 같다. 
 
-우선 HTTP Methods (GET,POST,PUT,HEAD,PATCH,DELETE)만 가지고 Resource의 행동을 다 표현하기에는 부족함이 있는 것이 아닌가 싶기도 하다. 
+이번에 설계를 하면서, Twitter나 Facebook의 API을 참고하긴 했지만, 각각의 스타일의 차이를 알수는 있어도 좋은 디자인 규칙에 대한 정보를 얻기가 힘들었다. 
 
-또 Client에서 GET과 POST을 지원할 경우(혹은 다른 메소드를 지원하는 불투명한 경우)에 쉽게 HTTP Methods을 결정하기 어려워지기도 하다. [^1]
+특히 리소스 모델링 부분이 어려운데, [REST API Design Rulebook][RuleBook]을 참고하여 구성하고 있다.
 
-사실 리소스 모델링 부분이 어려운데[^2], [RuleBook][RuleBook]을 참고하여 구성하고 있다.
+##  Resource의 프로토타입을 제시 
 
-[RuleBook][RuleBook]에서 인상적인 부분들은 다음과 같다. 
+[REST API Design Rulebook][RuleBook]에서는 리소스의 원형을 다음과 같이 제시한다. 
 
-- Resource의 프로토타입을 제시 
    - 도큐먼트 
    - 컬렉션 
    - 스토어 
    - 컨트롤러 
 
+이중에서 가장 흥미로운 리소스 원형은 컨트롤러 리소스와 스토어 리소스이다. 
+컨트롤러 리소스는 사실 HTTP Method으로는 표현하기 힘든 행동을 리소스로 표현하기 위해 존재한다.
 
+    POST /alerts/23456/resend 
+
+스토어 리소스는 기본적으로 클라이언트가 관리하는 리소스이다. (다른 3개의 리소스는 서버-사이드 리소스이다) 
+그리고 새로운 리소스를 만들지 못한다. 
+예를 들어, 서버에서 관리하는 리소스인 컬렉션 리소스에 어떤 도큐먼트 리소스를 포함(저장)하는 행동을 클라이언트가 스토어 리소스로 할수 있다. (이는 기존에 존재하는 리소스의 관계를 만드는(저장하는) 행동이기 때문에 새로운 리소스를 만든다고 할수 없는 것 같다) 
+개인적인 짧은 생각으로는 스토어 리소스라는 이름보다는 릴레이션 리소스 같은 이름이 좀더 명확한것이 아닌가 싶다. 
+
+이책의 저자는 이런 리소스 디자인을 가지고 [Web Resource Modeling Language][wrml]이라는 프로젝트를 하고 있지만,큰 호응이 있는 것 같지는 않다. 
+
+관례적으로 (예상되겠지만) 도규먼트는 단수 명사, 콜렉션은 복수 명사,스토어는 복수 명사,컨트롤러는 동사를 사용한다.  http://www.wrml.org/modelingLanguage
+
+이런 리소스의 원형(혹은 규칙)을 가지고 API을 만든다면 좀더 일관성이 있는 REST API을 만들기 좋지 않나 싶다. 
 
 
 [RuleBook]: http://shop.oreilly.com/product/0636920021575.do
-
-[^1]: Rails의 경우 (몇년 전 기억이지만) 지원하지 않은 브라우저를 위해  form_for 태그에 _method으로 추가해서 사용할수 있도록 했다. (http://apidock.com/rails/ActionView/Helpers/FormHelper/form_for)
-
-[^2]: 사실 XML-RPC가 REST API보다 강제적이라서 좀더 클라이언트의 검증등의 이점이 있지 않나 하는 생각도 있다. 
+[wrml]: http://www.wrml.org
 
 
 
