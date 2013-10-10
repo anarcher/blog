@@ -5,7 +5,7 @@
 > -- Phil Karlton 
 
 Chef을 써보면서, 요리에 관련된 메타포를 사용하여 Chef 구성요소들의 이름들을 잘 지었다는 생각이 든다. 
-Chef을 구성하는 요소에 대한 설명을 간단히 하자면:
+Chef을 구성하는 요소에 대한 설명을 간단히 몇개 적어 보자면:
 
 - Chef    : 요리사,Server Configuration Project 
 - Recipe  : 요리법,어떤 작업을 할지 서술하는 목록 
@@ -13,16 +13,16 @@ Chef을 구성하는 요소에 대한 설명을 간단히 하자면:
 - Knife   : 칼 요리도구,Chef의 CLI 도구
 - Node    : 구성 작업할 서버
 - Workstation : 작업장, Knife등의 도구를 통해 Chef에 작업을 하는 머신. 
-- Attribute : 
-- Data bag : 
-- Envoiroment: 
-- Role :
+- Data bag : Chef Server에 JSON기반으로 저장되는 데이터 
+- Run list : Node에 작업할 목록(Cookbook의 Recipe나 다른 Role을 포함할수 있다)
+- Attribute : 노드의 속성. Node와 Cookbook,Role,Environment에서 정의될수 있고,순서규칙에 따라 overide가 된다.
+- Role : Run list와 Attribute을 가지는 설정 
 
 물론 모든 단어가 요리에 관련된 단어는 아니다. 좀더 명확하게 설명할수 있는 요소는 굳이 사용하지 않은 듯 하다. 
 
-다른 좋았던 점은 Data bag과 Search 부분이다. 구성에 대한 정보를 Data bag의 Attribute으로 등록해두고 Recipe에서 사용하는 방식은 기능과 정보를 나누어서 관리 할수 있어서 데이터에 따른 recipe 사용이 좀더 편해진다. 
+좋았던 점은 Data bag과 Search 부분이다. 구성에 대한 정보를 Data bag의 Item으로 등록해두고 Recipe에서 사용하는 방식은 기능과 정보를 나누어서 관리 할수 있어서 데이터에 따른 recipe 사용이 좀더 편해진다. 
 
-특히 Chef REST API을 가지고 서버 구성하는 애플리케이션을 만들때, 따로 DB을 구성하지 않고 Chef의 Data bag을 사용할 수 있다. 
+특히 Chef REST API을 가지고 서버 구성하는 애플리케이션을 만들때, 따로 DB을 구성하지 않고 Chef의 Data bag을 사용할 수 있다 (트랜잭션이 크게 중요하지 않다는 판단하에). 
 
 구성이 끝나면,Chef의 Node에 추가되는데. Node의 정보(cpus,mem...)등도 함께 등록되기 때문에 현재 가용중인 서버들의 정보를 얻기에 쉽다. 
 
