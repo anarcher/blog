@@ -1,8 +1,7 @@
 /* fonts */
 
 /* general style */
-body    { font: 20px dotum,arial,sans-serif,serif; color: #333;
-          margin: 0; padding: 0; }
+body    { font: 20px "맑은 고딕", "돋움", dotum,arial,sans-serif,serif; color: #333; background: #fff; margin: 0; padding: 0; }
 a       { color: black;}
 a:hover { color: #CC0033; }
 
