@@ -3,7 +3,6 @@
 <!-- Created: 2014-01-06 -->
 <!-- Updated: 2014-01-06 -->
 
-
 ![enter image description here][1]
 
 [크롬북](http://www.theverge.com/2013/10/23/4948120/acer-c720-chromebook-review)을 샀다. 
