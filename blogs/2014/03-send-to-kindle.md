@@ -1,5 +1,5 @@
 <!-- Title: Send-to-kindle 2014-03 -->
-<!-- Tags: send-to-kindle,golang,devops,concurrency -->
+<!-- Tags: send-to-kindle,golang,devops,concurrency,datomic -->
 
 > 읽어야 할 글들을 Kindle에 던지는데,뭘 킨들에 던졌는지 기록해 두면 좋을 것 같아서 적어본다. 
 
@@ -43,4 +43,17 @@ ansible에서 이러한 정보를 인벤토리라고 부르는데, ansible tower
 
 ansible에는 동적 인벤토리라는 기능을 제공하는데. 이 기능을 이용하여 인벤토리를 etcd에 저장하고 ansible을 사용하는 방법에 대한 글.
 
+# [Datomic Rationale Why did we build Datomic?](http://www.datomic.com/rationale.html)
+
+기존의 데이터베이스는 Client/Server구조를 기본적으로 가진다. Scalability을 위해 Server을 Clustering을 하거나 Sharing,Replicating을 하게 된다. 
+그리고 Client(Application)에서 일종의 Caching을 구성하게 된다. 
+
+Datomic은 이러한 전통적인 데이터베이스의 구성요소를 해체(Deconstruct)해서 다음과 같은 구조로 각 요소에 대한 좀 더  효율성(Efficiency)과 확장성(Scalability)을 구성할수 있도록 한다.
+
+- Peers : LiveIndex,Local Cache,Query (쿼리 할 때 Live Index,Local cache를 참고한다 (모든 데이터에 대한 캐쉬가 각 Peer에 존재하는 듯 하다(기본적으로)) 
+- Transactor : 각 Peer의 Writes에 대한 모든 Transaction을 담당한다.
+- Storage services : 영속적인 스토리지 서비스에 대한 인터페이스 
+- Cache : Optional
+
+![img](http://www.datomic.com/uploads/3/5/9/7/3597326/119999_orig.jpg)
 
