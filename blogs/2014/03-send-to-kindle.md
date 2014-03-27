@@ -57,3 +57,8 @@ Datomic은 이러한 전통적인 데이터베이스의 구성요소를 해체(D
 
 ![img](http://www.datomic.com/uploads/3/5/9/7/3597326/119999_orig.jpg)
 
+
+# [BUILDING YOUR FIRST APP ON COREOS: START TO FINISH](http://www.centurylinklabs.com/building-your-first-app-on-coreos/)
+
+mac osx에서 (다른 OS도 가능하겠지만) coreos와 fig등을 이용하여 wordpress을 사용하는 방법을 적은 글. 
+개인적으로 fleet에 대한 관심이 생기게 된 글이다.
