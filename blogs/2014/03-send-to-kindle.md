@@ -1,5 +1,5 @@
 <!-- Title: Send-to-kindle 2014-03 -->
-<!-- Tags: send-to-kindle,golang,devops,concurrency,datomic -->
+<!-- Tags: send-to-kindle,golang,devops,concurrency,datomic,coreos,docker -->
 
 > 읽어야 할 글들을 Kindle에 던지는데,뭘 킨들에 던졌는지 기록해 두면 좋을 것 같아서 적어본다. 
 
