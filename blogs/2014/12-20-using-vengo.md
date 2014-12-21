@@ -16,7 +16,7 @@ go get에 특정 브랜치나 특정 태그(버젼)을 추가하자는 이야기
 원래 하려는 이야기는 Versioning이 아니었는데.하튼
 [Vengo](github.com/icub3d/goblog)는 Python의 virtualenv처럼 여러 Go환경을 구성할수 있는 프로젝트이다.
 
-![VengoImage1](https://raw.githubusercontent.com/DamnWidget/VenGO/images/vengo.png)
+![VengoImage1](/post/2014-12-vengo.png)
 
 Vengo은 Go 자체도 설치해준다.
 
