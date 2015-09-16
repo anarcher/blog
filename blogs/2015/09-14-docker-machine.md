@@ -1,7 +1,7 @@
 <!-- Title: Using docker-machine -->
 <!-- Tags: docker -->
 
-Docker machine is a command tool created by docker team to manage docker servers. It automatically create hosts and install docker engine on them,configure the docker client to talk. 
+The Docker machine is a command tool created by  the docker team to manage docker servers. It automatically creates hosts and installs docker engine on them and configures the docker client to talk. 
 
 If you install the docker machine tool,you can use it like below:
 
@@ -27,7 +27,7 @@ If you install the docker machine tool,you can use it like below:
     ...
 
 
-It's useful to use docker command with docker machine command for to connect docker engine on multi hosts.
+It's useful to use docker command with docker machine command to connect docker engine on multi hosts.
 
 `docker-machine config` is just printed like below.
 
@@ -36,15 +36,15 @@ It's useful to use docker command with docker machine command for to connect doc
     --tlscert="/home/anarcher/.docker/machine/machines/host1/cert.pem" 
     --tlskey="/home/anarcher/.docker/machine/machines/host1/key.pem" -H=tcp://192.168.99.100:2376
 
-As you know,The bash command substitution can make the output of docker-machine command to replace the command itself. It's the one of funny things of unix shell too. :-)
+As you know,the bash command substitution can make the output of docker-machine command to replace the command itself. It's one of the funny things using unix shell, too. :-)
 
-Docker machine keeps the configuraion files that is an information to connect on docker hosts to ~/.docker/machine/. If you want to share it the others,you just to copy it and share it. 
+Docker machine keeps the configuraion files which are  information to connect on docker hosts to ~/.docker/machine/. If you want to share it with the others,you just copy it and share it. 
 
-Docker machine is based on ssh authentication to setup docker host nodes. So you can log in hosts to use `docker-machine ssh [name]`.
+Docker machine is based on ssh authentication to set up docker host nodes. So you can log in hosts to use `docker-machine ssh [name]`.
 
-Docker machine has many drivers that represent the virtual environments.The virtual environments are local linux,AWS,Digital ocean and many more.  Also You can add a existed Docker host to use driver `none` or If the host hasn't a docker engine,you can use the driver `generic` to install docker engine. 
+Docker machine has many drivers that represent the virtual environments.The virtual environments are local linux,AWS,Digital ocean and many more.  You can also add a existed Docker host to use driver `none` or if the host doesn't has a docker engine,you can use the driver `generic` to install docker engine. 
 
-Docker machine has many options. So I used to use `grep` command with Unix pipe for searching the right command. 
+Docker machine has many options. So I have been using  `grep` command with Unix pipe for searching the right command. 
 
     $docker-machine create -h | grep digi
        --digitalocean-access-token              Digital Ocean access token [$DIGITALOCEAN_ACCESS_TOKEN]
@@ -57,5 +57,5 @@ Docker machine has many options. So I used to use `grep` command with Unix pipe 
 
 
 
-Basically It's convenience tool looks like other docker tools. But unlike `ansible` or `chef`, It's only care Docker engine. If you want to host configuration, You should use the other tools with docker engine. 
+Basically It's a convenience tool which looks like other docker tools. But unlike `ansible` or `chef`, It only care for Docker engine. If you want to host configuration, You should use other tools with `docker-machine`. 
 
