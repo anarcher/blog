@@ -1,0 +1,51 @@
+baseURL = "https://anarcher.bitbucket.io/"
+languageCode = "en-us"
+author = "anarcher"
+title = "Anarcher's Trashcan"
+canonifyurls = true
+paginate = 5
+copyright="&copy; 2017. All rights reserved."
+theme = "blackburn"
+summaryLength="10"
+
+[indexes]
+  tag = "tags"
+
+[params]
+    brand = "Anarcher's T"
+    highlightjs = "androidstudio"
+    highlightjs_extra_languages = ["yaml"]
+    googleAnalytics = "UA-38571523-1"
+    dateFormat = "2006-01-02"
+
+[menu]
+  # Shown in the side menu.
+  [[menu.main]]
+    name = "Home"
+    pre = "<i class='fa fa-home fa-fw'></i>"
+    weight = 1
+    identifier = "home"
+    url = "/"
+  [[menu.main]]
+    name = "Posts"
+    pre = "<i class='fa fa-list fa-fw'></i>"
+    weight = 2
+    identifier = "post"
+    url = "/post/"
+  [[menu.main]]
+    name = "Tags"
+    pre = "<i class='fa fa-tags fa-fw'></i>"
+    weight = 3 
+    identifier = "tag"
+    url = "/tags/"
+  [[menu.main]]
+    name = "About"
+    pre = "<i class='fa fa-user fa-fw'></i>"
+    weight = 4 
+    identifier = "about"
+    url = "/about/"
+
+[social]
+    twitter="anarcher"
+    github="anarcher"
+
