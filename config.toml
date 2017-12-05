@@ -14,7 +14,7 @@ summaryLength="10"
 [params]
     brand = "Anarcher's T"
     highlightjs = "androidstudio"
-    highlightjs_extra_languages = ["yaml"]
+    highlightjs_extra_languages = ["yaml","go"]
     googleAnalytics = "UA-38571523-1"
     dateFormat = "2006-01-02"
 
