@@ -5,7 +5,7 @@ draft=false
 date="2017-12-05"
 +++
 
-One of pleasures the developing is using good tools. Recently I use [bumpversion][], [govvv][] and [drone][] for version releasing.  
+One of pleasures about coding is using good tools. Recently I use [bumpversion][], [govvv][] and [drone][] for version releasing.  
 
 ## bumpversion
 
@@ -53,7 +53,7 @@ Date:   Tue Dec 5 21:08:17 2017 +0900
 govvv install -pkg github.com/pkg/version github.com/cmd/
 ```
 
-I just made version/version.go 
+I just created version/version.go 
 
 ```
 package version
@@ -74,7 +74,7 @@ Cmd version 0.8.4 git=2639d4e build=2017-12-05T15:57:13Z
 
 ## drone 
 
-[drone][] is a open source continuous delivery tool. Interesting features of [drone][] are that all tasks in drone is docker containers and drone's yaml configure file is a superset  of docker-compose configure file.  
+[drone][] is an open source continuous delivery tool. Interesting features of [drone][] are that all tasks in drone is docker containers and drone's yaml configure file is a superset  of docker-compose configure file.  
 
 ```
 clone:
@@ -104,9 +104,9 @@ pipeline:
             status: [ success, failure ]
 ``` 
 
-If repository __tag__ hooks is enable in drone settings (default not),git commit tag is sync up with docker tag. 
-This is simply how do I use the tools for releasing and versioning.
+If repository __tag__ hooks is enable in drone settings (default disable),git commit tag will sync up with docker tag. 
+This is simply how to use the tools for releasing and versioning.
 
-[bumpversion]: https://github.com/peritus/bumpversion
+[bumpversion]: https://github.com/peritus/bumpversion 
 [govvv]: https://github.com/ahmetb/govvv
 [drone]: https://github.com/drone/drone
