@@ -6,3 +6,6 @@
     url = https://github.com/yoshiharuyamashita/blackburn.git
 
 
+[submodule "themes/kiss"]
+	path = themes/kiss
+	url = https://github.com/ribice/kiss.git
