@@ -1,46 +1,36 @@
 baseURL = "https://blog.anarcher.dev/"
 languageCode = "en-us"
-author = "anarcher"
 title = "Anarcher's Trashcan"
 canonifyurls = true
 copyright="&copy; 2019. All rights reserved."
-theme = "kiss"
+theme = "yinyang"
 Paginate = 5
 enableRobotsTXT = true
 googleAnalytics = "UA-38571523-1"
+DefaultContentLanguage = "en"
 
-[params.rss] 
-includeContent = true
-authorName = "anarcher"
-authorEmail = "anarcher@gmail.com"
+[author]
+name = "Anarcher"
+homepage = "https://blog.anarcher.dev/"
 
-[params.assets]
-customCSS = ["css/custom.css"]
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+  [languages.ko]
+    languageName = "Korean"
+    weight = 2
 
-[params.info]
-adsense = "" # Adsense ID (ID only, without ca-pub-)
-enableSocial = true # Adds OpenGraph and Twitter cards
-homeTitle = "" # Title for home page
-poweredby = true # Adds powered by hugo and kiss below Copyright
-related = true # Includes related articles at the bottom of the article
-
-[params.social]
-twitter = "anarcher"
-github = "anarcher"
-email = "anarcher@gmail.com"
-linkedin = "anarcher"
-facebook = "anarcher"
-instagram = ""
-codepen = ""
-rss = "index.xml" # Add this to show RSS button in social.
-
-[params.social.config]
-platforms = ["github","twitter","email"]
-
-[taxonomies]
-tag ="tags"
-
-[blackfriday]
-hrefTargetBlank = true
-
-
+[params]
+[[params.socials]]
+name = "About"
+link = "/about"
+[[params.socials]]
+name = "Github"
+link = "https://github.com/anarcher"
+[[params.socials]]
+name = "Twitter"
+link = "https://twitter.com/anarcher"
+[[params.socials]]
+name = "Email"
+link = "mailto:anarcher@gmail.com"
